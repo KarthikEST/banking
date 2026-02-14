@@ -33,13 +33,18 @@ export function CallWidget({ onCallInitiated }: CallWidgetProps) {
     setCallDuration(0);
 
     try {
-      const response = await fetch("https://auric.haloocom.in/canadian1/make-call", {
+      const response = await fetch("https://hexaweb.haloocom.in/marco/make-call", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          phoneNumber: number, // Make sure this includes country code like "+919876543210"
-          campaignId: callType,
-          listId: "canadian_campaign_1",
+          phoneNumber: number,
+          campaignId: "EMI_REMINDER",
+          customer_name: "Customer",
+          emi_due_date: "5th March 2025",
+          emi_amount: "5000",
+          bank_name: "HDFC Bank",
+          last_emi_bounced: "true",
+          listId: "1",
         }),
       });
 
